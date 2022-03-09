@@ -1,0 +1,38 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  } 
+  
+  #creator {
+    text-align: right;
+  } 
+  
+  #howmany {
+    text-align: right;
+  }
+  
+  .center {
+    margin: auto;
+    padding: 100px;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 100px;
+    background-color: #00B7FF;
+    }
+
+    .create{
+        margin:auto;
+        width: fit-content;
+    }
+    
+  #destinationTitle {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
