@@ -14,3 +14,5 @@ const EventSchema = mongoose.Schema({
     remarks: String
 
 });
+
+module.exports = mongoose.model('Events', EventSchema) 
