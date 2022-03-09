@@ -1,7 +1,8 @@
 var express = require('express');
-const { resource } = require('../app');
+const { redirect } = require('express/lib/response')
 const events = require('../models/events');
 var router = express.Router();
+
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -12,13 +13,19 @@ router.get('/result-list', function (req, res, next) {
   res.render('resultList');
 });
 
+// router.get('/home', function (req, res, next) {
+//   res.render('createSathi');
+// });
+
 router.get('/home', function (req, res, next) {
-  res.render('createSathi');
+  res.render('homepage');
 });
 
+router.get('/create-sathi', function (req, res, next) {
+  res.render('createSathi')
+});
 router.post('/save-event', function (req, res, next) {
-  console.log(req.body.name);
-  const event = new Events({
+  const event = new events({
     name: req.body.name,
     currentLocation: req.body.currentLocation,
     phoneNumber: req.body.phoneNumber,
@@ -37,7 +44,13 @@ router.post('/save-event', function (req, res, next) {
 
     res.redirect('/result-list');
 
-  })
+  });
+
+
+});
+
+router.get('/result-list', function (req, res, next) {
+  res.render('resultList');
 });
 
 module.exports = router;
