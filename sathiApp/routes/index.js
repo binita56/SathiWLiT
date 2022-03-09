@@ -8,6 +8,9 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/home', function (req, res, next) {
+    res.render('destination')})
+
 router.get('/result-list', function (req, res, next) {
   res.render('resultList');
 });
@@ -39,5 +42,6 @@ router.post('/save-event', function (req, res, next) {
 
   })
 });
+
 
 module.exports = router;
