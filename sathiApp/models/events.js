@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 const EventSchema = mongoose.Schema({
-    name: String,
+    names: String,
     currentLocation: String,
     phoneNumber: String,
-    email: String,
+    emailAddress: String,
     gender: String,
     destination: String,
     startTravelDate: Date,

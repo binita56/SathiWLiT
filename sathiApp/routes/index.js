@@ -1,6 +1,6 @@
 var express = require('express');
 const { redirect } = require('express/lib/response')
-const events = require('../models/events');
+const Events = require('../models/events');
 var router = express.Router();
 
 
@@ -9,8 +9,17 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/result-list', function (req, res, next) {
-  res.render('resultList');
+
+
+router.get('/result-list', async function (req, res, next) {
+  let events = []
+  if (req.query.search) {
+    events = await Events.find({ destination: req.query.search })
+  } else {
+    events = await Events.find()
+  }
+  console.log(events, "------------")
+  res.render('resultList', { events });
 });
 
 // router.get('/home', function (req, res, next) {
@@ -25,11 +34,11 @@ router.get('/create-sathi', function (req, res, next) {
   res.render('createSathi')
 });
 router.post('/save-event', function (req, res, next) {
-  const event = new events({
-    name: req.body.name,
+  const event = new Events({
+    names: req.body.names,
     currentLocation: req.body.currentLocation,
     phoneNumber: req.body.phoneNumber,
-    email: req.body.email,
+    emailAddress: req.body.emailAddress,
     gender: req.body.gender,
     destination: req.body.destination,
     startTravelDate: req.body.startTravelDate,
@@ -38,6 +47,8 @@ router.post('/save-event', function (req, res, next) {
     itinerary: req.body.itinerary,
     remarks: req.body.remarks
   });
+
+
 
   const promise = event.save();
   promise.then((event) => {
@@ -52,5 +63,6 @@ router.post('/save-event', function (req, res, next) {
 router.get('/result-list', function (req, res, next) {
   res.render('resultList');
 });
+
 
 module.exports = router;
