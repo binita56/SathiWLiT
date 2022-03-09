@@ -6,59 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/result.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>Search List</title>
 </head>
 
-<body>
-    <form>
-        <%for(var i=0; i<events.length;i++){%>
-            <div class="card" style="width: 30rem; margin-top: 30px;">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <p style="color: red; font-weight: bold;">
-                                <%= events[i].startTravelDate %>
-                            </p>
-                        </div>
-                        <div class="col-4">
-                            <p id="creator"
-                                style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px;" />
-                            created
-                            by
-                            <%= events[i].names %>
-                                </p>
-                        </div>
-                    </div>
-                    <h5 class="card-title" value="" />
-                    <%= events[i].destination %>
-                        </h5>
+<body style="background-color: #E3F2FD">
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #E3F2FD">
+        <a class="navbar-brand" href="#"><img class="rounded float-left" src="/img/Logo.png" alt="Logo" height="60px"
+                width="60px" /></a>Sathi
+        <ul class="navbar-nav mr-auto floatright">
+            <li class="nav-item ">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/result-list">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form>
+            <%for(var i=0; i<events.length;i++){%>
+                <div class="card1" style="width: 30rem; margin-top: 30px;">
+                    <div class="card-body">
                         <div class="row">
-                            <div class="col-8"><a href="/destination/<%= events[i]._id %>" id="<%= events[i]._id %>"
-                                    class="btn btn-primary" type="submit">View More</a>
+                            <div class="col-8">
+                                <p style="color: red; font-weight: bold;">
+                                    <%= events[i].startTravelDate %>
+                                </p>
                             </div>
-                            <div id="howmany" class="col-4"> <span
-                                    style="font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;">
-                                    <%= events[i].requiredNumber %>
-                                </span>
-                                <span
-                                    style="font-size: small; font-family: Georgia, 'Times New Roman', Times, serif;">required</span>
+                            <div class="col-4">
+                                <p id="creator"
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px;" />
+                                created
+                                by
+                                <%= events[i].names %>
+                                    </p>
                             </div>
                         </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <p style="padding-left: 18px;">email me at: &nbsp;</p>
-                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-                                <%= events[i].emailAddress %>
-                            </a>
-                        </div>
+                        <h5 class="card-title" value="" />
+                        <%= events[i].destination %>
+                            </h5>
+                            <div class="row">
+                                <div class="col-8"><a href="/destination/<%= events[i]._id %>" id="<%= events[i]._id %>"
+                                        class="btn btn-primary" type="submit">View More</a>
+                                </div>
+                                <div id="howmany" class="col-4"> <span
+                                        style="font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;">
+                                        <%= events[i].requiredNumber %>
+                                    </span>
+                                    <span
+                                        style="font-size: small; font-family: Georgia, 'Times New Roman', Times, serif;">required</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <p style="padding-left: 18px;">email me at: &nbsp;</p>
+                                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                                    <%= events[i].emailAddress %>
+                                </a>
+                            </div>
+                    </div>
                 </div>
-            </div>
-
-
-            <%}%>
-    </form>
+                <%}%>
+        </form>
+    </div>
 </body>
 
 </html>

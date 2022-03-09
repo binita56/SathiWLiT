@@ -1,0 +1,14 @@
+.floatright {
+    margin-left: 1000px;
+  }
+  .container {
+    grid: 100px 300px / auto-flow 200px;
+  }
+  .card1 {
+    grid: 100px 300px / auto-flow 200px;
+  }
+  
+  
+  
+  
+  

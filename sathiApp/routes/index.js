@@ -4,6 +4,7 @@ const Events = require('../models/events');
 var router = express.Router();
 
 
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
@@ -40,9 +41,9 @@ router.get('/create-sathi', function (req, res, next) {
   res.render('createSathi')
 });
 
-router.get('/destination/:', function (req, res, next) {
-  res.render('destination');
-});
+// router.get('/destination/:', function (req, res, next) {
+//   res.render('destination');
+// });
 router.post('/save-event', function (req, res, next) {
   const event = new Events({
 

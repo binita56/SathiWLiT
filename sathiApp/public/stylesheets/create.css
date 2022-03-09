@@ -1,0 +1,50 @@
+form {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 100px;
+  }
+  .floatright {
+    margin-left: 1000px;
+  }
+  .button1 {
+    background-color: #023E8A;
+    border: 1px solid white;
+    box-sizing: border-box;
+    color: #ADE8F4;
+    font-family: "Avenir Next LT W01 Bold", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .button1:hover,
+  .button1:active {
+    outline: 0;
+  }
+  .button1:hover {
+    background-color: transparent;
+    cursor: pointer;
+    color: #023E8A;
+  }
+  .button1:before {
+    background-color: #D5EDF6;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
+  }
+  .button1:hover:before {
+    background-color: #ADE8F4;
+  }
