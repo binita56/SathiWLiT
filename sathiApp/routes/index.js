@@ -9,16 +9,22 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/destination/:_id', async function (req, res, next) {
 
+  const event = await Events.findOne({ _id: req.params._id })
+
+  // console.log(event, "events details");
+  res.render('destination', { event });
+})
 
 router.get('/result-list', async function (req, res, next) {
-  let events = []
+  let events = ''
   if (req.query.search) {
     events = await Events.find({ destination: req.query.search })
   } else {
     events = await Events.find()
   }
-  console.log(events, "------------")
+  console.log(events, "eventssssss------------")
   res.render('resultList', { events });
 });
 
@@ -33,8 +39,13 @@ router.get('/home', function (req, res, next) {
 router.get('/create-sathi', function (req, res, next) {
   res.render('createSathi')
 });
+
+router.get('/destination/:', function (req, res, next) {
+  res.render('destination');
+});
 router.post('/save-event', function (req, res, next) {
   const event = new Events({
+
     names: req.body.names,
     currentLocation: req.body.currentLocation,
     phoneNumber: req.body.phoneNumber,
@@ -60,9 +71,9 @@ router.post('/save-event', function (req, res, next) {
 
 });
 
-router.get('/result-list', function (req, res, next) {
-  res.render('resultList');
-});
+// router.get('/result-list', function (req, res, next) {
+//   res.render('resultList');
+// });
 
 
 module.exports = router;

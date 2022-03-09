@@ -19,38 +19,28 @@
     <div class="row">
         <label for="startTravelDate" class="col-sm-2 col-form-label">Start Date:</label>
         <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="startTravelDate" class="startTravelDate"
-                value="Susmita">
+            <label type="text" readonly class="form-control-plaintext" id="startTravelDate" class="startTravelDate">
+                <%= event.startTravelDate %>
         </div>
-        <label for="startTravelDate" class="col-sm-2 col-form-label">End Date:</label>
+        <label for="endTravelDate" class="col-sm-2 col-form-label">End Date:</label>
         <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="endTravelDate" class="endTravelDate"
-                value="04/22/33">
+            <label type="text" readonly class="form-control-plaintext" id="endTravelDate" class="endTravelDate">
+                <%= event.endTravelDate %>
         </div>
     </div>
     <div class="row">
-        <label for="itenary" class="col-sm-2 col-form-label">Iteniary:</label>
+        <label for="itenary" class="col-sm-2 col-form-label">Itiniary:</label>
         <div class="col-sm-4">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type 
-                specimen book. It has survived not only five centuries, but also the leap into 
-                electronic typesetting, remaining essentially unchanged. It was popularised in 
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including 
-                versions of Lorem Ipsum.</p>
-        </div> 
-        <label for="message" class="col-sm-2 col-form-label">Remarks</label>
+            <p>
+                <%= event.itinerary %>
+            </p>
+        </div>
+        <label for="remarks" class="col-sm-2 col-form-label">Remarks</label>
         <div class="col-sm-4">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type 
-                specimen book. It has survived not only five centuries, but also the leap into 
-                electronic typesetting, remaining essentially unchanged. It was popularised in 
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including 
-                versions of Lorem Ipsum.</p>
-    </div>
+            <p>
+                <%= event.remarks %>
+            </p>
+        </div>
 
 
 
