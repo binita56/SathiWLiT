@@ -1,64 +1,14 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Destination Details</title>
-</head>
-
-<body>
-    <div>
-        <p id="destinationTitle">Destination Name</p>
-    </div>
-
-    <div class="row">
-        <label for="startTravelDate" class="col-sm-2 col-form-label">Start Date:</label>
-        <div class="col-sm-2">
-            <label type="text" readonly class="form-control-plaintext" id="startTravelDate" class="startTravelDate">
-                <%= event.startTravelDate %>
-        </div>
-        <label for="endTravelDate" class="col-sm-2 col-form-label">End Date:</label>
-        <div class="col-sm-2">
-            <label type="text" readonly class="form-control-plaintext" id="endTravelDate" class="endTravelDate">
-                <%= event.endTravelDate %>
-        </div>
-    </div>
-    <div class="row">
-        <label for="itiniary" class="col-sm-2 col-form-label">Itiniary:</label>
-        <div class="col-sm-4">
-            <p>
-                <%= event.itinerary %>
-            </p>
-        </div>
-        <label for="remarks" class="col-sm-2 col-form-label">Remarks</label>
-        <div class="col-sm-4">
-            <p>
-                <%= event.remarks %>
-            </p>
-        </div>
-
-
-
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/stylesheets/destination.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <title>Destination Details</title>
-
     <style>
         body {
             padding: 50px;
@@ -70,74 +20,88 @@
     </style>
 </head>
 
-<body>
-    <div>
-        <h1 style="text-align: center;">
-            <%= event.destination %>
-        </h1>
-    </div>
-    <div class="form-row">
-        <div class="col-6">
-            <label for="startTravelDate" class="col-sm-2 col-form-label">Start Date:</label>
-            <%= event.startTravelDate %>
+<body style="background-color: #E3F2FD">
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #E3F2FD">
+        <a class="navbar-brand" href="#"><img class="rounded float-left" src="/img/Logo.png" alt="Logo" height="60px"
+                width="60px" /></a>Sathi
+        <ul class="navbar-nav mr-auto floatright">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/result-list">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div>
+            <h1 style="text-align: center">
+                <%= event.destination %>
+            </h1>
         </div>
-        <div class="col">
-            <label for="endTravelDate" class="col-sm-2 col-form-label">End Date:</label>
-            <%= event.endTravelDate %>
-        </div>
-
-    </div>
-
-    <div class="form-row">
-        <div class="col-6">
-            <div class="row">
-                <div class="col-2">
-                    <label for="Itinerary" class="col-sm-2 col-form-label">Itinerary: </label>
-                </div>
-                <div class="col" class="col-sm-2 col-form-label">
-                    <p>
-                        <%= event.itinerary %>
-                    </p>
-
-                </div>
-
-
+        <div class="form-row">
+            <div class="col-6">
+                <label for="startTravelDate" class="col-sm-2 col-form-label">Start Date:</label>
+                <%= event.startTravelDate %>
+            </div>
+            <div class="col">
+                <label for="endTravelDate" class="col-sm-2 col-form-label">End Date:</label>
+                <%= event.endTravelDate %>
             </div>
         </div>
-
-        <div class="col-6">
-            <div class="row">
-                <div class="col-2">
-                    <label for="Remarks" class="col-sm-2 col-form-label">Remarks: </label>
+        <div class="form-row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-2">
+                        <label for="Itinerary" class="col-sm-2 col-form-label">Itinerary:
+                        </label>
+                    </div>
+                    <div class="col" class="col-sm-2 col-form-label">
+                        <p>
+                            <%= event.itinerary %>
+                        </p>
+                    </div>
                 </div>
-                <div class="col" class="col-sm-2 col-form-label">
-                    <p>
-                        <%= event.itinerary %>
-                    </p>
-
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-2">
+                        <label for="Remarks" class="col-sm-2 col-form-label">Remarks:
+                        </label>
+                    </div>
+                    <div class="col" class="col-sm-2 col-form-label">
+                        <p>
+                            <%= event.itinerary %>
+                        </p>
+                    </div>
                 </div>
-
-
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <div class="row" style="margin: 16px">
+                    <p>Send me message at: &nbsp</p>
+                    <a href="https://gmail.com" target="_blank">
+                        <%= event.emailAddress %>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="margin: 16px">
+                <p>
+                    Event created by
+                    <span style="font-family: 'Courier New', Courier, monospace">
+                        <%= event.names %>
+                    </span>
+                </p>
             </div>
         </div>
     </div>
-    <div class="form-row">
-        <div class="col">
-            <div class="row" style="margin: 16px;">
-                <p>Send me message at: &nbsp</p>
-                <a href="https://gmail.com" target="_blank">
-                    <%= event.emailAddress %>
-                </a>
-            </div>
-        </div>
-        <div class="row" style="margin: 16px;">
-            <p>Event created by <span style="font-family: 'Courier New', Courier, monospace;">
-                    <%= event.names %>
-                </span></p>
-        </div>
-    </div>
-
-
 </body>
 
 </html>

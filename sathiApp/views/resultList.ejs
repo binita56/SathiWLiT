@@ -34,11 +34,11 @@
     <div class="container">
         <form>
             <%for(var i=0; i<events.length;i++){%>
-                <div class="card1" style="width: 30rem; margin-top: 30px;">
-                    <div class="card-body">
+                <div class="card" style=" margin-top: 30px;">
+                    <div class="card-body card-main">
                         <div class="row">
                             <div class="col-8">
-                                <p style="color: red; font-weight: bold;">
+                                <p style="color:#d81159; font-weight: bold;">
                                     <%= events[i].startTravelDate %>
                                 </p>
                             </div>
@@ -51,12 +51,13 @@
                                     </p>
                             </div>
                         </div>
-                        <h5 class="card-title" value="" />
+                        <h5 class="card-title titel1" value="" />
                         <%= events[i].destination %>
                             </h5>
                             <div class="row">
                                 <div class="col-8"><a href="/destination/<%= events[i]._id %>" id="<%= events[i]._id %>"
-                                        class="btn btn-primary" type="submit">View More</a>
+                                        class=" button-8" type="submit">View
+                                        More</a>
                                 </div>
                                 <div id="howmany" class="col-4"> <span
                                         style="font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;">
@@ -68,7 +69,7 @@
                             </div>
                             <div class="row" style="margin-top: 10px;">
                                 <p style="padding-left: 18px;">email me at: &nbsp;</p>
-                                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                                <a href="https://gmail.com" target="_blank" rel="noopener noreferrer">
                                     <%= events[i].emailAddress %>
                                 </a>
                             </div>
